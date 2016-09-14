@@ -1,0 +1,15 @@
+on init
+    wait /dev/ion
+    wait /dev/qseecom
+
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+    chmod 0664 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+
+    insmod /sbin/texfat.ko
+
+    start qseecomd
+
+service qseecomd /system/bin/qseecomd
+    disabled
