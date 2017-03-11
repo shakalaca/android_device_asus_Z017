@@ -10,7 +10,7 @@
 
 /asdf           ext4      /dev/block/bootdevice/by-name/asdf                 flags=display="ASDF";wipeingui;backup=1
 /factory        ext4      /dev/block/bootdevice/by-name/factory              flags=display="Factory";backup=1
-/firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Modem firmware";mounttodecrypt;fsflags=ro
+/firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Modem firmware";mounttodecrypt
 /persist        ext4      /dev/block/bootdevice/by-name/persist              flags=display="Persist";backup=1
 /asusfw         ext4      /dev/block/bootdevice/by-name/asusfw               flags=display="ASUS firmware";backup=1
 /dsp            ext4      /dev/block/bootdevice/by-name/dsp                  flags=display="DSP";backup=1
