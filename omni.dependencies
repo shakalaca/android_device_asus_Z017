@@ -1,3 +1,14 @@
 [
-
+  {
+    "remote": "github",
+    "repository": "shakalaca/android_kernel_asus_ze520kl",
+    "revision": "android-7.0",
+    "target_path": "kernel/asus/ze520kl"
+  },
+  {
+    "remote": "github",
+    "repository": "TeamWin/android_device_qcom_common",
+    "revision": "android-7.1",
+    "target_path": "device/qcom/common"
+  }
 ]

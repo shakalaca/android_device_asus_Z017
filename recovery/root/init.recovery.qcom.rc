@@ -1,19 +1,9 @@
+import init.recovery.qcom_decrypt.rc
+
 on init
-    wait /dev/ion
-    wait /dev/qseecom
-
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
-    chmod 0664 /dev/qseecom
-    chown system drmrpc /dev/qseecom
-
     insmod /sbin/texfat.ko
 
-    start qseecomd
     start copy_fingerprint
-
-service qseecomd /sbin/qseecomd
-    disabled
 
 on fs
     wait /dev/block/bootdevice/by-name/factory

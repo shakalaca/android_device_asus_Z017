@@ -28,14 +28,13 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_CONFIG := ze520kl-userdebug_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_PREBUILT_KERNEL := device/asus/ze520kl/recovery/kernel
+TARGET_PREBUILT_KERNEL := device/asus/ze520kl/kernel
 
 TARGET_LDPRELOAD := libNimsWrap.so
 
 # Crypto
+TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Recovery
@@ -44,6 +43,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Partitions
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
@@ -51,19 +51,17 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # TWRP-Specific
 TW_THEME := portrait_hdpi
-TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
+TW_INCLUDE_NTFS_3G := true
 TW_EXTRA_LANGUAGES := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
 RECOVERY_SDCARD_ON_DATA := true
-BOARD_SUPPRESS_SECURE_ERASE := true
 #TW_TARGET_USES_QCOM_BSP := true
-#TW_NEW_ION_HEAP := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_SUPERSU := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_BLANK := true
-# TW_NO_SCREEN_TIMEOUT := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
 
 # original path was /sys/devices/soc/1a00000.qcom,mdss_mdp/1a00000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight/brightness
 TW_BRIGHTNESS_PATH := "/sys/devices/soc/1a00000.qcom\x2mdss_mdp/1a00000.qcom\x2mdss_mdp:qcom\x2mdss_fb_primary/leds/lcd-backlight/brightness"
@@ -73,22 +71,12 @@ TARGET_RECOVERY_DEVICE_MODULES := \
     libbinder \
     libgui \
     libui \
-    libEGL \
-    libGLES_trace \
-    libGLESv2 \
-    libprotobuf-cpp-lite \
-    libsync \
     qseecomd
 
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := \
     $(OUT)/system/lib64/libbinder.so \
     $(OUT)/system/lib64/libgui.so \
     $(OUT)/system/lib64/libui.so \
-    $(OUT)/system/lib64/libEGL.so \
-    $(OUT)/system/lib64/libGLES_trace.so \
-    $(OUT)/system/lib64/libGLESv2.so \
-    $(OUT)/system/lib64/libprotobuf-cpp-lite.so \
-    $(OUT)/system/lib64/libsync.so \
     $(OUT)/system/bin/qseecomd
 
 TARGET_UNIFIED_DEVICE := true
