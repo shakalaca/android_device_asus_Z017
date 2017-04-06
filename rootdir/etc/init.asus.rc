@@ -1134,3 +1134,68 @@ on property:debug.asus.setfactorydata=1
     write /factory/LaserFocus_CSC_Calibration.txt  "Calibration by CSC"
     mount ext4 /dev/block/bootdevice/by-name/factory /factory remount ro nosuid nodev barrier=1 noauto_da_alloc
 # ASUS_BSP WeiYu---
+
+# ASUS_BSP Deeo : improve sd performance +++
+service improve_sd /system/etc/improve_sd.sh
+    class main
+    oneshot
+    seclabel u:r:check_sd_status:s0
+# ASUS_BSP Deeo : improve sd performance ---
+
+# ASUS_BSP Paul +++
+service asus_audbg /system/bin/sh /system/etc/init.asus.audbg.sh
+    user root
+    group root
+    disabled
+    oneshot
+#    seclabel u:r:audio_debug:s0
+
+on property:persist.asus.audbg=0
+    start asus_audbg
+
+on property:persist.asus.audbg=1
+    start asus_audbg
+
+service asus_checkaudbg /system/bin/sh /system/etc/init.asus.checkaudbg.sh
+    class core
+    user root
+    group root
+#    disabled
+    oneshot
+#    seclabel u:r:audio_debug:s0
+
+service spk_amp_cal /system/bin/SpeakerCalibrationTest 1
+    class core
+    user root
+    group root
+#    disabled
+    oneshot
+#    seclabel u:r:audio_debug:s0
+
+service spk_feedback /system/bin/logwrapper /system/bin/tinyfeedback -r 48000 -p 1920 -n 2 -A
+    user root
+    group root
+    disabled
+    oneshot
+#    seclabel u:r:audio_debug:s0
+
+on property:audio.spk.feedback=0
+    stop spk_feedback
+
+on property:audio.spk.feedback=1
+    start spk_feedback
+# ASUS_BSP Paul ---
+# ASUS_BSP Austin_T +++
+service instant_camera /system/etc/init.asus.keycamera.sh
+        user root
+        group root
+        disabled
+        oneshot
+        seclabel u:r:instant_camera:s0
+
+on property:persist.asus.instant_camera=0
+        start instant_camera
+
+on property:persist.asus.instant_camera=1
+    start instant_camera
+# ASUS_BSP Austin_T ---
