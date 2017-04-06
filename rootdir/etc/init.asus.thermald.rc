@@ -22,12 +22,12 @@ service shawnA /system/bin/sh /etc/init.asus.thermal_conf.sh
 #        disabled
 # ASUS_BSP--- Shawn_Huang
 
-service onFgAppChanged /system/bin/onFgAppChanged
-        class core
-        user root
-        oneshot
-        disabled
-		seclabel u:r:onFgAppChanged:s0
+#service onFgAppChanged /system/bin/onFgAppChanged
+#        class core
+#        user root
+#        oneshot
+#        disabled
+#		seclabel u:r:onFgAppChanged:s0
 		
 # ASUS_BSP+++ Shawn_Huang
 on post-fs-data
@@ -50,15 +50,15 @@ on property:sys.boot_completed=1
 # ASUS_BSP--- ShawnHuang "For disable bodysar"
 
 # ASUS_BSP+++ VictorFu "For Ultimate mode & disable thermald"
-on property:sys.ultimate.mode.enabled=*
-	start onFgAppChanged
-on property:sys.thermald.disabled=*
-        start onFgAppChanged
+#on property:sys.ultimate.mode.enabled=*
+#	start onFgAppChanged
+#on property:sys.thermald.disabled=*
+#        start onFgAppChanged
 # ASUS_BSP--- VictorFu "For Ultimate mode & disable thermald"
 
 # ASUS_BSP+++ VictorFu "For watching foreground app"
-on property:sys.foregroundapp=*
-	start onFgAppChanged
+#on property:sys.foregroundapp=*
+#	start onFgAppChanged
 # ASUS_BSP--- VictorFu "For watching foreground app"
 
 # ASUS_BSP+++ VictorFu "For pad mode"
