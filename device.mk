@@ -187,6 +187,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Connectivity Engine support
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
 # Display Calibration
 PRODUCT_PACKAGES += \
     libjni_livedisplay
