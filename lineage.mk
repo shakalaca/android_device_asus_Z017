@@ -14,10 +14,6 @@
 
 $(call inherit-product, device/asus/Z017/full_Z017.mk)
 
-# Boot animation
-#TARGET_SCREEN_WIDTH := 1080
-#TARGET_SCREEN_HEIGHT := 1920
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Z017
 PRODUCT_NAME := lineage_Z017
