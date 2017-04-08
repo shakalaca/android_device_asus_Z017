@@ -19,6 +19,11 @@ on firmware_mounts_complete
 on boot
     chmod 0444 /proc/cmdline
 
+    # ASUS_BSP Paul +++
+    start asus_checkaudbg
+    start spk_amp_cal
+    # ASUS_BSP Paul ---
+    
 on init
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin:/bin
 
