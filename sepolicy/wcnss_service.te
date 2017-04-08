@@ -1,0 +1,2 @@
+allow wcnss_service wcnss_service:capability { setgid setuid };
+allow wcnss_service factory_file:dir { search };
