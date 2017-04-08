@@ -332,6 +332,8 @@ on post-fs-data
     chmod 777 /data/misc/aw/route_path.info
 #Bruno++
 
+    chmod 666 /sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode
+
 #+++ASUS BSP David : mount asdf folder for charger mode log
 on charger
 #mount asdf

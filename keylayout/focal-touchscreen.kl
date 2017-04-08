@@ -1,4 +1,4 @@
-#key 116    GESTURE_DOUBLE_CLICK          WAKE    VIRTUAL
+key 116    POWER          WAKE    VIRTUAL
 #key 103    GESTURE_SWIPE_UP          WAKE    VIRTUAL
 key 158    BACK               VIRTUAL
 key 139    APP_SWITCH         VIRTUAL

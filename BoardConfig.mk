@@ -181,7 +181,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 57583582208 # 56233967 * 1024 mmcblk0p67
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-TARGET_TAP_TO_WAKE_NODE := "/sys/class/input/input1/dclickmode"
+TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode"
 
 # Qualcomm support
 #BOARD_USES_QC_TIME_SERVICES := true
