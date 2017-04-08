@@ -262,3 +262,13 @@ service execkernelevt /system/etc/execkernelevt.sh
     disabled
     oneshot
 	seclabel u:r:dumpstate:s0	
+
+#ASUS_BSP Johnny +++ "add tcpdump tool"
+# tcpdump_warp service to save tcpdump to /sdcard
+service tcpdump-warp /system/bin/sh /system/xbin/netlog.sh
+    class late_start
+    user root
+    group root
+    disabled
+#ASUS_BSP Johnny --- "add tcpdump tool"
+

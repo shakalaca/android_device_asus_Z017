@@ -30,31 +30,21 @@
 import init.asus.usb.rc
 #import init.msm.usb.configfs.rc
 #ASUS_BSP--- "[USB][NA][Spec] Add ASUS USB support"
-import init.target.rc
 #ASUS_BSP +++ ShowCai "[Thermal] Thermal Service"
 import init.asus.thermald.rc
 #ASUS_BSP --- ShowCai "[Thermal] Thermal Service"
 #+++ ASUS_BSP : Add ASUS user/eng rc
 import init.asus.rc
 # --- ASUS_BSP : Add ASUS user/eng rc
-import init.qcom.factory.rc
-import init.qcom.test.rc
-
 #ASUS_BSP Wei +++
 import init.asus.debugtool.rc
 #ASUS_BSP Wei +++
+import init.target.rc
+import init.qcom.factory.rc
+
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
-
-#ASUS_BSP Johnny +++ "add tcpdump tool"
-# tcpdump_warp service to save tcpdump to /sdcard
-service tcpdump-warp /system/bin/sh /system/xbin/netlog.sh
-    class late_start
-    user root
-    group root
-    disabled
-#ASUS_BSP Johnny --- "add tcpdump tool"
 
 on init
     # Load persistent dm-verity state
