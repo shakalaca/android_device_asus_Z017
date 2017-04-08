@@ -1016,7 +1016,6 @@ lib/libebtc.so
 
 bin/SpeakerCalibrationTest
 bin/climax_hostSW
-bin/tinyplay
 bin/tinyfeedback
 etc/Tfa98xx.cnt
 lib/libtfa98xx.so
@@ -1067,8 +1066,8 @@ lib/libjpegHWCompress.so
 lib/libjpeggifcodec.so
 lib/libmms_gyro_vstab.so
 lib/libpdmapper.so
-lib/libsparse.so
-lib/libtinyxml2.so
+#lib/libsparse.so
+#lib/libtinyxml2.so
 
 etc/init.asus.audbg.sh
 etc/init.asus.check_asdf.sh
@@ -1114,10 +1113,10 @@ etc/wfdconfigsink.xml
 
 framework/com.asus.fm.jar
 framework/ifaamanager.jar
-framework/org.codeaurora.camera.jar
+#framework/org.codeaurora.camera.jar
 framework/tcmiface.jar
 framework/uimlpalibrary.jar
-framework/vcard.jar
+#framework/vcard.jar
 
 bin/BackupCalibrationData
 bin/CameraModule
@@ -1154,7 +1153,6 @@ bin/athdiag
 bin/camera_flash
 bin/camera_flash2
 bin/camera_flash3
-bin/cplay
 bin/create_pcbid.sh
 bin/diag_callback_sample
 bin/diag_dci_sample
@@ -1178,12 +1176,11 @@ bin/gpsone_daemon
 bin/gptest
 etc/collectfplog.sh
 etc/fpsensortest.sh
-etc/fpservice.sh
+#etc/fpservice.sh
 bin/fpseek
 bin/gx_fpcmd
 bin/gx_fpd_gxfp3
 bin/hal_proxy_daemon
-bin/hs20-osu-client
 bin/hvdcp_opti
 bin/install_key_server
 bin/is_keybox_valid
@@ -1204,16 +1201,12 @@ bin/qcom-system-daemon
 bin/qmi_simple_ril_test
 bin/qseecom_sample_client
 bin/recvkernelevt
-bin/rmnetcli
 bin/secure_ui_sample_client
-bin/setup_fs
 bin/sigma_dut
 bin/soter_client
 bin/ssn
 bin/ssr_diag
 bin/ssr_setup
-bin/tinycap
-bin/tinypcminfo
 bin/touch_function
 bin/touch_self_test
 bin/vendor_cmd_tool
@@ -1236,3 +1229,11 @@ bin/exfatvsn
 bin/mkexfat
 bin/mkntfs
 bin/ntfsck
+
+#bin/cplay
+#bin/hs20-osu-client
+#bin/rmnetcli
+#bin/setup_fs
+#bin/tinycap
+#bin/tinyplay
+#bin/tinypcminfo
