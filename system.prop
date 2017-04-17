@@ -327,3 +327,5 @@ persist.radio.add_power_save=1
 persist.radio.force_on_dc=true
 persist.radio.atfwd.start=false
 persist.radio.flexmap_type=asus_mode
+
+qcom.bluetooth.soc=smd
