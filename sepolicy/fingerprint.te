@@ -9,6 +9,8 @@ allow qti_init_shell asus_fingerprint_exec:file { read open getattr execute exec
 
 binder_call(fingerprintd, qti_init_shell)
 binder_call(qti_init_shell, fingerprintd)
+binder_call(system_app, fingerprintd)
+binder_call(fingerprintd, system_app)
 
 allow init asus_fingerprint_exec:file { getattr };
 
