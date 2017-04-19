@@ -81,6 +81,9 @@ on post-fs-data
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/hbtp 0750 system system
 
+#support exFAT format
+    insmod /system/lib/modules/texfat.ko
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
