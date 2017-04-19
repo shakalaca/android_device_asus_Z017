@@ -13,13 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include vendor/asus/Z017/BoardConfigVendor.mk
-
 VENDOR_PATH := device/asus/Z017
 
 BOARD_VENDOR := asus-qcom
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
+
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := Z017,ASUS_Z017D_1
+
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
@@ -45,12 +49,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 ENABLE_CPUSETS := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
-
-# Asserts
-TARGET_OTA_ASSERT_DEVICE := Z017,ASUS_Z017D_1
-
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 
@@ -133,7 +131,10 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+BOARD_HARDWARE_CLASS += \
+    hardware/cyanogen/cmhw \
+    $(VENDOR_PATH)/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode"
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -149,9 +150,9 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 BOARD_EGL_CFG := $(VENDOR_PATH)/configs/egl.cfg
 BOARD_USES_ADRENO := true
-TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
+TARGET_USES_C2D_COMPOSITION := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_OVERLAY := true
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -179,22 +180,17 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432    #    32768 * 1024 mmcblk0p59
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4026531840    #  3932160 * 1024 mmcblk0p66
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 57583582208 # 56233967 * 1024 mmcblk0p67
 
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode"
-
 # Qualcomm support
 #BOARD_USES_QC_TIME_SERVICES := true
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_POWERHAL_VARIANT := qcom
 
 # Radio
-#BOARD_PROVIDES_LIBRIL := true
-#BOARD_PROVIDES_RILD := true
 TARGET_RIL_VARIANT := caf
 
 # Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
+BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -235,3 +231,7 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+
+# inherit from the proprietary version
+-include vendor/asus/Z017/BoardConfigVendor.mk
+
