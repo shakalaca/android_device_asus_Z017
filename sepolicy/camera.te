@@ -9,5 +9,6 @@ allow mm-qcamerad system_data_file:dir { write remove_name add_name };
 allow mm-qcamerad proc:file { write };
 allow mm-qcamerad rgb_sensor_device:chr_file { ioctl open write read };
 allow mm-qcamerad dev_ioctl_LaserFocus:chr_file { read write open ioctl };
+allow mm-qcamerad sensors_socket:sock_file { read };
 
 allow cameraserver system_file:file { lock };

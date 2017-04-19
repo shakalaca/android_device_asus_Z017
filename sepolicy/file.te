@@ -13,5 +13,7 @@ allow init demoapp_file:dir { mounton };
 
 allow qti_init_shell factory_file:file { read open getattr };
 allow qti_init_shell factory_file:dir { search };
-allow qti_init_shell log_file:file { open write getattr setattr };
-allow qti_init_shell log_file:dir { read open getattr search write };
+allow qti_init_shell log_file:file { open write getattr setattr read };
+allow qti_init_shell log_file:dir { read open getattr search write add_name };
+
+allow audioserver factory_file:dir { read };
