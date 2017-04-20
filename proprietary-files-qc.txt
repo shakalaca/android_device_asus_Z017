@@ -155,6 +155,8 @@ lib/soundfx/libicepower.so
 #lib64/soundfx/libvisualizer.so
 etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
 etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
+lib/libtfa98xx.so
+lib64/libtfa98xx.so
 vendor/lib64/libaudiodevarb.so
 vendor/lib/libaudiodevarb.so
 vendor/lib/libadm.so
@@ -165,6 +167,9 @@ vendor/lib/liblistensoundmodel2.so
 #lib64/hw/audio.primary.msm8953.so
 etc/icesoundconfig.def
 etc/icesoundpresets.def
+bin/tinyplay
+bin/tinyfeedback
+etc/Tfa98xx.cnt
 
 # Bluetooth
 bin/btnvtool
@@ -709,6 +714,10 @@ vendor/bin/RIDLClient.exe
 vendor/lib/libsregex.so
 vendor/lib/libtar.so
 lib64/libdhcpcd.so
+vendor/etc/RIDL/GoldenLogmask.dmc
+vendor/etc/RIDL/OTA-Logs.dmc
+vendor/etc/RIDL/RIDL.db
+vendor/etc/RIDL/qdss.cfg
 
 # Radio - IMS
 bin/ims_rtp_daemon
@@ -789,21 +798,17 @@ lib/sensors.PS_ALS.msm8953.so:lib/hw/sensors.PS_ALS.msm8953.so
 
 # Thermal
 vendor/bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
 # Time services
-#-app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk
 bin/time_daemon
-vendor/lib/libtime_genoff.so
+-vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
-vendor/lib64/libtime_genoff.so
+-vendor/lib64/libtime_genoff.so
 vendor/lib64/libTimeService.so
-vendor/etc/RIDL/GoldenLogmask.dmc
-vendor/etc/RIDL/OTA-Logs.dmc
-vendor/etc/RIDL/RIDL.db
-vendor/etc/RIDL/qdss.cfg
 
 # Widevine
 vendor/lib/libcppf.so
@@ -843,6 +848,8 @@ vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
 vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
 vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
 vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
+bin/is_keybox_valid
+bin/widevine.sh
 
 # Wifi
 vendor/lib/libwfdnative.so
@@ -868,6 +875,40 @@ etc/firmware/ifaata.b04
 etc/firmware/ifaata.b05
 etc/firmware/ifaata.b06
 etc/firmware/ifaata.mdt
+
+etc/firmware/adsp.b00
+etc/firmware/adsp.b01
+etc/firmware/adsp.b02
+etc/firmware/adsp.b03
+etc/firmware/adsp.b04
+etc/firmware/adsp.b05
+etc/firmware/adsp.b06
+etc/firmware/adsp.b07
+etc/firmware/adsp.b08
+etc/firmware/adsp.b09
+etc/firmware/adsp.b10
+etc/firmware/adsp.b11
+etc/firmware/adsp.b12
+etc/firmware/adsp.b13
+etc/firmware/adsp.b14
+etc/firmware/adsp.mbn
+etc/firmware/adsp.mdt
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mdt
+etc/firmware/wcnss.b00
+etc/firmware/wcnss.b01
+etc/firmware/wcnss.b02
+etc/firmware/wcnss.b04
+etc/firmware/wcnss.b06
+etc/firmware/wcnss.b09
+etc/firmware/wcnss.b10
+etc/firmware/wcnss.b11
+etc/firmware/wcnss.b12
+etc/firmware/wcnss.mdt
 
 lib64/libsdmcore.so
 lib64/libsdmutils.so
@@ -904,7 +945,7 @@ etc/firmware/hbtp/qtc800s_dsp.bin
 
 etc/hsic.control.bt.sh
 etc/init.ath3k.bt.sh
-etc/init.crda.sh
+#etc/init.crda.sh
 etc/init.qcom.audio.sh
 etc/init.qcom.bt.sh
 etc/init.qcom.coex.sh
@@ -1038,11 +1079,6 @@ etc/ftm_test_config_mtp
 etc/ftm_test_config_msm8953-sku3-tasha-snd-card
 etc/ftm_test_config_wcd9335
 
-vendor/etc/RIDL/GoldenLogmask.dmc
-vendor/etc/RIDL/OTA-Logs.dmc
-vendor/etc/RIDL/RIDL.db
-vendor/etc/RIDL/qdss.cfg
-
 vendor/lib64/libCommandSvc.so
 
 # mdtp
@@ -1089,41 +1125,6 @@ vendor/lib64/libwfduibcsinkinterface.so
 vendor/lib64/libwfduibcsink.so
 vendor/lib64/libwfduibcsrcinterface.so
 vendor/lib64/libwfduibcsrc.so
-
-etc/firmware/wcnss.b00
-etc/firmware/wcnss.b01
-etc/firmware/wcnss.b02
-etc/firmware/wcnss.b04
-etc/firmware/wcnss.b06
-etc/firmware/wcnss.b09
-etc/firmware/wcnss.b10
-etc/firmware/wcnss.b11
-etc/firmware/wcnss.b12
-etc/firmware/wcnss.mdt
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mdt
-etc/firmware/adsp.b00
-etc/firmware/adsp.b01
-etc/firmware/adsp.b02
-etc/firmware/adsp.b03
-etc/firmware/adsp.b04
-etc/firmware/adsp.b05
-etc/firmware/adsp.b06
-etc/firmware/adsp.b07
-etc/firmware/adsp.b08
-etc/firmware/adsp.b09
-etc/firmware/adsp.b10
-etc/firmware/adsp.b11
-etc/firmware/adsp.b12
-etc/firmware/adsp.b13
-etc/firmware/adsp.b14
-etc/firmware/adsp.mbn
-etc/firmware/adsp.mdt
-
 etc/wfdconfig.xml
 etc/wfdconfig_le.xml
 etc/wfdconfigsink.xml
