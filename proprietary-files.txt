@@ -1025,14 +1025,14 @@ bin/GammaSetting
 lib64/libcctapi.so
 
 # fm
-lib64/fm_helium.so
-lib64/libfm-hci.so
-lib64/libfmjni.so
-lib64/libqcomfm_jni.so
-lib/fm_helium.so
-lib/libfm-hci.so
-lib/libfmjni.so
-lib/libqcomfm_jni.so
+#lib64/fm_helium.so
+#lib64/libfm-hci.so
+#lib64/libfmjni.so
+#lib64/libqcomfm_jni.so
+#lib/fm_helium.so
+#lib/libfm-hci.so
+#lib/libfmjni.so
+#lib/libqcomfm_jni.so
 
 # misc
 lib64/libfilterpack_facedetect.so
@@ -1055,7 +1055,6 @@ lib64/libbitmaps.so
 lib64/libcrashlytics-envelope.so
 lib64/libcrashlytics.so
 lib64/libmemchunk.so
-lib64/libtinyxml2.so
 lib64/libjni.so
 lib64/libmms_gyro_vstab.so
 lib/libantradio.so
@@ -1068,6 +1067,7 @@ lib/libmms_gyro_vstab.so
 lib/libpdmapper.so
 #lib/libsparse.so
 #lib/libtinyxml2.so
+#lib64/libtinyxml2.so
 
 etc/init.asus.audbg.sh
 etc/init.asus.check_asdf.sh
@@ -1166,7 +1166,7 @@ bin/fm_qsoc_patches
 bin/fmconfig
 bin/fmfactorytest
 bin/fmfactorytestserver
-bin/fmhal_service
+#bin/fmhal_service
 bin/fsstress
 bin/fsstress-run.sh
 bin/fstman
