@@ -91,7 +91,7 @@ public class TouchscreenGestures {
      */
     public static boolean setGestureEnabled(
             final TouchscreenGesture gesture, final boolean state) {
-        int gestureMode = Integer.parseInt(FileUtils.readOneLine(GESTURE_PATH), 16);
+        int gestureMode = Integer.parseInt(FileUtils.readOneLine(GESTURE_PATH), 16) & ~KEY_MASK_GESTURE_CONTROL;
         int mask = ALL_GESTURE_MASKS[gesture.id];
 
         if (state)
@@ -102,7 +102,7 @@ public class TouchscreenGestures {
         if (gestureMode != 0)
             gestureMode |= KEY_MASK_GESTURE_CONTROL;
 
-        return FileUtils.writeLine(GESTURE_PATH, String.format("%s",
-                Integer.toHexString(gestureMode)));
+        return FileUtils.writeLine(GESTURE_PATH, String.format("%7s\n",
+                Integer.toBinaryString(gestureMode)).replace(' ', '0'));
     }
 }
