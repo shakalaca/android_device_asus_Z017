@@ -86,8 +86,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
     libvolumelistener \
-    tinymix \
-    audio_amplifier.msm8953
+    tinymix
 
 PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/configs/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \

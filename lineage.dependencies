@@ -3,5 +3,16 @@
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common"
   },
+  {
+    "remote": "github",
+    "repository": "shakalaca/android_kernel_asus_ze520kl",
+    "target_path": "kernel/asus/Z017",
+    "branch": "android-7.0"
+  },
+  {
+    "remote": "github",
+    "repository": "shakalaca/android_hardware_qcom_audio-caf_msm8937_asus",
+    "target_path": "hardware/qcom/audio-caf/msm8937/legacy"
+  },
 ]
 
