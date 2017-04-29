@@ -14,9 +14,19 @@ allow mm-qcamerad rgb_sensor_device:chr_file { ioctl open write read };
 allow mm-qcamerad dev_ioctl_LaserFocus:chr_file { read write open ioctl };
 allow mm-qcamerad sensors_socket:sock_file { read };
 allow mm-qcamerad proc_driver_laser_focus:file { read open getattr };
+allow mm-qcamerad dit_file:sock_file { create getattr unlink };
+allow mm-qcamerad debugfs:dir { read };
 
 allow cameraserver system_file:file { lock };
 allow cameraserver proc_driver_asus_flash:file { read write open getattr };
 allow cameraserver proc_driver_laser_focus:file { read write open getattr };
 allow cameraserver proc_driver_modules:file { read write open getattr };
-allow cameraserver proc_evtlog:file { append open };
+allow cameraserver proc_evtlog:file { append open getattr };
+allow cameraserver debug_prop:property_service { set };
+allow cameraserver system_prop:property_service { set };
+allow cameraserver system_data_file:sock_file { write };
+allow cameraserver mm-qcamerad:unix_stream_socket { connectto };
+
+allow perfd cameraserver:process { signull };
+
+binder_call(qti_init_shell, surfaceflinger)

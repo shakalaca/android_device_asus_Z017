@@ -47,6 +47,7 @@
 /dev/LaserSensor                        u:object_r:dev_ioctl_LaserFocus:s0
 /data/.tmp(/.*)?                        u:object_r:camera_factory_file:s0
 /data/dit_file(/.*)?                    u:object_r:dit_file:s0
+/data/DITNetworkFile                    u:object_r:dit_file:s0
 
 # gesture
 /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/gesture_mode   u:object_r:sysfs_gesture:s0
