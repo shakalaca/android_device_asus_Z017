@@ -1,6 +1,9 @@
 type camera_factory_file, file_type;
 type dit_file, file_type;
 type dev_ioctl_LaserFocus, dev_type;
+type proc_driver_asus_flash, file_type;
+type proc_driver_laser_focus, file_type;
+type proc_driver_modules, file_type;
 
 allow mm-qcamerad factory_file:file { read open getattr lock };
 allow mm-qcamerad factory_file:dir { search };
@@ -10,5 +13,10 @@ allow mm-qcamerad proc:file { write };
 allow mm-qcamerad rgb_sensor_device:chr_file { ioctl open write read };
 allow mm-qcamerad dev_ioctl_LaserFocus:chr_file { read write open ioctl };
 allow mm-qcamerad sensors_socket:sock_file { read };
+allow mm-qcamerad proc_driver_laser_focus:file { read open getattr };
 
 allow cameraserver system_file:file { lock };
+allow cameraserver proc_driver_asus_flash:file { read write open getattr };
+allow cameraserver proc_driver_laser_focus:file { read write open getattr };
+allow cameraserver proc_driver_modules:file { read write open getattr };
+allow cameraserver proc_evtlog:file { append open };

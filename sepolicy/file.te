@@ -7,6 +7,9 @@ type factory_file, file_type;
 # Default type for anything under /APD, /ADF
 type demoapp_file, file_type;
 
+type proc_evtlog, file_type;
+type proc_asus_debug, file_type;
+
 allow init log_file:dir { mounton };
 allow init factory_file:dir { mounton };
 allow init demoapp_file:dir { mounton };
@@ -17,3 +20,5 @@ allow qti_init_shell log_file:file { open write getattr setattr read };
 allow qti_init_shell log_file:dir { read open getattr search write add_name };
 
 allow audioserver factory_file:dir { read };
+
+allow system_server proc_evtlog:file { append open };
