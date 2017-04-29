@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES += \
-    $(call project-path-for,qcom-audio)/hal/msm8974/ \
+    $(call project-path-for,qcom-audio)/hal/msm8916/ \
     external/tinyalsa/include \
     $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
     hardware/libhardware/include
