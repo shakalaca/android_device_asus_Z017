@@ -4,6 +4,7 @@ type dev_ioctl_LaserFocus, dev_type;
 type proc_driver_asus_flash, file_type;
 type proc_driver_laser_focus, file_type;
 type proc_driver_modules, file_type;
+type jpeg_device, dev_type;
 
 allow mm-qcamerad factory_file:file { read open getattr lock };
 allow mm-qcamerad factory_file:dir { search };
@@ -26,7 +27,45 @@ allow cameraserver debug_prop:property_service { set };
 allow cameraserver system_prop:property_service { set };
 allow cameraserver system_data_file:sock_file { write };
 allow cameraserver mm-qcamerad:unix_stream_socket { connectto };
+allow cameraserver jpeg_device:chr_file { read write open ioctl };
 
 allow perfd cameraserver:process { signull };
 
 binder_call(qti_init_shell, surfaceflinger)
+
+# For PixelMaster (/system/priv-app/)
+type camera_app, domain, domain_deprecated, mlstrustedsubject;
+app_domain(camera_app)
+
+allow camera_app app_data_file:file { execute };
+allow camera_app activity_service:service_manager { find };
+allow camera_app display_service:service_manager { find };
+allow camera_app network_management_service:service_manager { find };
+allow camera_app connectivity_service:service_manager { find };
+allow camera_app appops_service:service_manager { find };
+allow camera_app mount_service:service_manager { find };
+allow camera_app sensorservice_service:service_manager { find };
+allow camera_app accessibility_service:service_manager { find };
+allow camera_app device_policy_service:service_manager { find };
+allow camera_app user_service:service_manager { find };
+allow camera_app trust_service:service_manager { find };
+allow camera_app power_service:service_manager { find };
+allow camera_app surfaceflinger_service:service_manager { find };
+allow camera_app input_method_service:service_manager { find };
+allow camera_app assetatlas_service:service_manager { find };
+allow camera_app graphicsstats_service:service_manager { find };
+allow camera_app audio_service:service_manager { find };
+allow camera_app usb_service:service_manager { find };
+allow camera_app cameraserver_service:service_manager { find };
+allow camera_app content_service:service_manager { find };
+allow camera_app input_service:service_manager { find };
+allow camera_app notification_service:service_manager { find };
+allow camera_app drmserver_service:service_manager { find };
+allow camera_app location_service:service_manager { find };
+allow camera_app mediaserver_service:service_manager { find };
+allow camera_app mediaextractor_service:service_manager { find };
+allow camera_app audioserver_service:service_manager { find };
+allow camera_app mediacodec_service:service_manager { find };
+allow camera_app permission_service:service_manager { find };
+
+allow camera_app jpeg_device:chr_file { read write open ioctl };
