@@ -52,3 +52,9 @@
 # gesture
 /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/gesture_mode   u:object_r:sysfs_gesture:s0
 /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/glove_mode     u:object_r:sysfs_gesture:s0
+
+# cpuset
+/dev/cpuset(/.*)?                                u:object_r:cpuset_device:s0
+
+# log
+/data/misc/netmgr(/.*)?                          u:object_r:netmgr_log:s0

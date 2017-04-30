@@ -22,5 +22,6 @@ allow qti_init_shell log_file:dir { read open getattr search write add_name };
 allow audioserver factory_file:dir { read };
 
 allow system_server proc_evtlog:file { append open getattr };
+allow thermal-engine proc_evtlog:file { read write open };
 
 allow rild proc_evtlog:file { write read open getattr };
