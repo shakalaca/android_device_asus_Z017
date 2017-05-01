@@ -125,6 +125,16 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    libfmjni \
+    libqcomfm_jni \
+    libfm-hci \
+    fm_helium \
+    qcom.fmradio \
+    fmhal_service
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8953 \
