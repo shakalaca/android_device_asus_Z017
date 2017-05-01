@@ -1092,8 +1092,6 @@ etc/cdma_call_conf.xml
 etc/drc/drc_cfg_5.1.txt
 etc/drc/drc_cfg_AZ.txt
 etc/hcidump.sh
-etc/icesoundconfig.def
-etc/icesoundpresets.def
 etc/init.asus.camera.sh
 etc/init.asus.gesture.sh
 etc/init.asus.keycamera.sh
