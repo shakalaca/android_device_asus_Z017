@@ -1037,16 +1037,6 @@ etc/sensors/sensor_def_qcomdev.conf
 #lib64/libebtc.so
 #lib/libebtc.so
 
-# fm
-#lib64/fm_helium.so
-#lib64/libfm-hci.so
-#lib64/libfmjni.so
-#lib64/libqcomfm_jni.so
-#lib/fm_helium.so
-#lib/libfm-hci.so
-#lib/libfmjni.so
-#lib/libqcomfm_jni.so
-
 # misc
 lib64/libfilterpack_facedetect.so
 lib64/libDUTUtil-JNI.so
@@ -1109,7 +1099,6 @@ etc/wfdconfig.xml
 etc/wfdconfig_le.xml
 etc/wfdconfigsink.xml
 
-framework/com.asus.fm.jar
 framework/ifaamanager.jar
 framework/tcmiface.jar
 framework/uimlpalibrary.jar
@@ -1140,11 +1129,6 @@ bin/diag_socket_log
 bin/diag_uart_log
 bin/dun-server
 bin/e_loop
-#bin/fm_qsoc_patches
-#bin/fmconfig
-#bin/fmfactorytest
-#bin/fmfactorytestserver
-#bin/fmhal_service
 bin/fstman
 bin/fw_auto_update.sh
 bin/garden_app

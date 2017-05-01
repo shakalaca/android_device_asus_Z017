@@ -934,7 +934,6 @@ framework/com.quicinc.wbc.jar
 framework/com.quicinc.wbcservice.jar
 framework/oem-services.jar
 framework/qcmediaplayer.jar
-framework/qcom.fmradio.jar
 framework/qmapbridge.jar
 framework/rcs_service_aidl.jar
 framework/rcs_service_api.jar
@@ -951,7 +950,6 @@ etc/init.qcom.bt.sh
 etc/init.qcom.coex.sh
 etc/init.qcom.debug.sh
 etc/init.qcom.efs.sync.sh
-etc/init.qcom.fm.sh
 etc/init.qcom.post_boot.sh
 etc/init.qcom.sdio.sh
 etc/init.qcom.uicc.sh
@@ -1128,3 +1126,21 @@ vendor/lib64/libwfduibcsrc.so
 etc/wfdconfig.xml
 etc/wfdconfig_le.xml
 etc/wfdconfigsink.xml
+
+# fm
+#lib64/fm_helium.so
+#lib64/libfm-hci.so
+#lib64/libfmjni.so
+#lib64/libqcomfm_jni.so
+#lib/fm_helium.so
+#lib/libfm-hci.so
+#lib/libfmjni.so
+#lib/libqcomfm_jni.so
+#framework/qcom.fmradio.jar
+#bin/fm_qsoc_patches
+#bin/fmconfig
+#bin/fmfactorytest
+#bin/fmfactorytestserver
+#bin/fmhal_service
+framework/com.asus.fm.jar
+etc/init.qcom.fm.sh
