@@ -371,6 +371,16 @@ PRODUCT_PACKAGES += \
     blkid \
     mke2fs
 
+# ANT+
+PRODUCT_PACKAGES += \
+    antradio_app \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
+PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
