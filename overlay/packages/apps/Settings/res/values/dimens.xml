@@ -16,8 +16,6 @@
 
 <resources>
 
-    <!-- Fingerprint -->
-    <dimen name="fingerprint_dot_radius">5dp</dimen>
-    <item name="fingerprint_sensor_location_fraction_y" type="fraction">95%</item>
+    <item name="fingerprint_sensor_location_fraction_y" type="fraction">29.999996%</item>
 
 </resources>
