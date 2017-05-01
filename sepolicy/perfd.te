@@ -30,5 +30,6 @@ allow logd cpuset_device:dir { search };
 allow installd cpuset_device:dir { search };
 allow audiod cpuset_device:dir { search };
 allow qti_init_shell cpuset_device:dir { search };
+allow shell cpuset_device:dir { search };
 
 allow perfd mediacodec:process { signull };
