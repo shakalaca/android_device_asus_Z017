@@ -251,7 +251,6 @@ ro.com.google.clientidbase.ms=android-asus-tpin
 ro.com.google.clientidbase.am=android-asus-tpin
 ro.com.google.clientidbase.gmm=android-asus-tpin
 ro.com.google.clientidbase.yt=android-asus-tpin
-ro.product.carrier=US-ASUS_Z017D-WW_Phone
 ro.com.android.dataroaming=true
 ro.vendor.extension_library=libqti-perfd-client.so
 persist.radio.apm_sim_not_pwdn=1

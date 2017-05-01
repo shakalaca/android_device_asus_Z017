@@ -42,6 +42,7 @@ void vendor_load_properties()
         property_set("ro.product.name", "Lineage_Z017");
         property_set("ro.build.description", "Lineage_Z017-user 7.1.2 N2G47E 9487 release-keys");
         property_set("ro.build.fingerprint", "Asus/Lineage_Z017/ASUS_Z017D_1:7.1.2/N2G47E/9487:user/release-keys");
+        property_set("ro.product.carrier", "US-ASUS_Z017D-WW_Phone");
     } else if (project == "7") {
         property_set("ro.build.product", "ZE552KL");
         property_set("ro.product.device", "ASUS_Z012D");
@@ -49,5 +50,6 @@ void vendor_load_properties()
         property_set("ro.product.name", "Lineage_Z012");
         property_set("ro.build.description", "Lineage_Z012-user 7.1.2 N2G47E 9487 release-keys");
         property_set("ro.build.fingerprint", "Asus/Lineage_Z012/ASUS_Z012D:7.1.2/N2G47E/9487:user/release-keys");
+        property_set("ro.product.carrier", "US-ASUS_Z012D-WW_Phone");
     }
 }
