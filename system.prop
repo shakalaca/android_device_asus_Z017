@@ -242,6 +242,7 @@ ro.asus.aw.settingentry=1
 # ADDITIONAL_BUILD_PROPERTIES
 #
 ro.build.asus.sku=WW
+ro.build.asus.version=14.2020.1703.28
 ro.asus.vibration_intensity=1
 ro.build.app.version=070010915_201612010002
 ro.asus.ui=1.0
