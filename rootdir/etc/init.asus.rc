@@ -47,7 +47,7 @@ on fs
     mkdir /persdata 0750 system system
     mkdir /persdata/absolute 0750 system system
     wait /dev/block/mmcblk0p61
-    check_fs /dev/block/mmcblk0p61 ext4
+#    check_fs /dev/block/mmcblk0p61 ext4
     mount ext4 /dev/block/mmcblk0p61 /persdata/absolute nosuid nodev barrier=1
     restorecon_recursive /persdata/absolute
 
@@ -351,10 +351,6 @@ on charger
 
 #ASUS BSP +++ Austin_Tseng charger mode country code
     mount ext4 /dev/block/bootdevice/by-name/factory /factory ro nosuid nodev barrier=1 noauto_da_alloc
-    service ssn /system/bin/ssn
-    seclabel u:r:asus_ssn:s0
-    enabled
-    oneshot
 #ASUS BSP --- Austin_Tseng charger mode country code
 
 	chmod 0777 /system/etc/rndisdiag.sh
@@ -869,21 +865,21 @@ on property:persist.asus.clear_count=0
 service normal_count /system/bin/reboot_count 0
     user root
     group root
-    seclablel u:r:reboot_count:s0
+    seclabel u:r:reboot_count:s0
     oneshot
 
 #reboot count
 service reboot_count /system/bin/reboot_count 1
     user root
     group root
-    seclablel u:r:reboot_count:s0
+    seclabel u:r:reboot_count:s0
     oneshot
 
 #reboot count
 service clear_count /system/bin/reboot_count 9
     user root
     group root
-    seclablel u:r:reboot_count:s0
+    seclabel u:r:reboot_count:s0
     oneshot
 
 # for sp tool
