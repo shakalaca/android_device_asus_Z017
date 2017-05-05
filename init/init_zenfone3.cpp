@@ -35,21 +35,22 @@
 void vendor_load_properties()
 {
     std::string project = property_get("ro.boot.id.prj");
+    property_set("ro.product.name", "WW_Phone");
     if (project == "6") {
         property_set("ro.build.product", "ZE520KL");
-        property_set("ro.product.device", "ASUS_Z017D");
+        property_set("ro.product.device", "ASUS_Z017D_1");
         property_set("ro.product.model", "ASUS_Z017D");
-        property_set("ro.product.name", "WW_Phone");
         property_set("ro.build.description", "WW_Phone-user 7.0 NRD90M 14.2015.1701.8-20170222 release-keys");
         property_set("ro.build.fingerprint", "asus/WW_Phone/ASUS_Z017D_1:7.0/NRD90M/14.2015.1701.8-20170222:user/release-keys");
         property_set("ro.product.carrier", "US-ASUS_Z017D-WW_Phone");
+        property_set("ro.hardware.id", "ZE520KL_MP");
     } else if (project == "7") {
         property_set("ro.build.product", "ZE552KL");
         property_set("ro.product.device", "ASUS_Z012D");
         property_set("ro.product.model", "ASUS_Z012D");
-        property_set("ro.product.name", "WW_Phone");
         property_set("ro.build.description", "WW_Phone-user 7.0 NRD90M 14.2015.1701.8-20170222 release-keys");
         property_set("ro.build.fingerprint", "asus/WW_Phone/ASUS_Z012D:7.0/NRD90M/14.2015.1701.8-20170222:user/release-keys");
         property_set("ro.product.carrier", "US-ASUS_Z012D-WW_Phone");
+        property_set("ro.hardware.id", "ZE552KL_MP");
     }
 }
