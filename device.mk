@@ -188,6 +188,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/s5k3m2xm_chromatix.xml:system/etc/camera/s5k3m2xm_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/ov2680_chromatix.xml:system/etc/camera/ov2680_chromatix.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bspcapability.xml:system/etc/bspcapability.xml \
+
 # Display
 PRODUCT_PACKAGES += \
     gralloc.msm8953 \
@@ -267,6 +270,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/capability.xml:system/etc/capability.xml \
 
 # OMX
 PRODUCT_PACKAGES += \
