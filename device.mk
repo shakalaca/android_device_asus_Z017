@@ -316,7 +316,8 @@ PRODUCT_PACKAGES += \
     init.asus.usb.rc \
     init.asus.thermald.rc \
     init.asus.debugtool.rc \
-    init.target.rc
+    init.target.rc \
+    sp
 
 # RIL
 PRODUCT_PACKAGES += \

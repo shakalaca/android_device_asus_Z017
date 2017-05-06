@@ -18,6 +18,7 @@ allow asus_sp property_socket:sock_file { write };
 allow asus_sp init:unix_stream_socket { connectto };
 allow asus_sp system_prop:property_service { set };
 allow asus_sp proc_meminfo:file { read open };
+allow asus_sp rootfs:file { entrypoint getattr read };
 
 allow asus_voucher factory_file:dir { search };
 allow asus_voucher factory_file:file { read open getattr };

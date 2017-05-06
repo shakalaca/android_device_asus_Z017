@@ -65,8 +65,6 @@
 /system/bin/writeosinfo                 u:object_r:asus_wosinfo_exec:s0
 /system/bin/VerifyVouchers              u:object_r:asus_voucher_exec:s0
 /system/bin/ssn                         u:object_r:asus_ssn_exec:s0
-/system/bin/sp                          u:object_r:asus_sp_exec:s0
-/bin/sp                                 u:object_r:asus_sp_exec:s0
 
 # asusfw
 /dev/block/bootdevice/by-name/asusfw   u:object_r:asusfw_block_device:s0
