@@ -138,10 +138,10 @@ service qseecomd /system/bin/qseecomd
 #   user system
 #   group system net_raw
 
-service perfd /system/vendor/bin/perfd
-   class main
-   user root
-   disabled
+#service perfd /system/vendor/bin/perfd
+#   class main
+#   user root
+#   disabled
 
 service gamed /system/vendor/bin/gamed
    class main
