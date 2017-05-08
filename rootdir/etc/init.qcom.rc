@@ -1268,13 +1268,6 @@ service poweroffhandler /system/bin/poweroffhandler
     disabled
     oneshot
 
-# bugreport is triggered by developer options
-#service bugreport /system/bin/dumpstate -d -p -B \
-#        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-#    class main
-#    disabled
-#    oneshot
-    
 # Logcat dump daemon, dumps logs to logdump partition
 service logdumpd /system/bin/logcat -b all -v threadtime -D -w /dev/block/bootdevice/by-name/logdump
     class core
