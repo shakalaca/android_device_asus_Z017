@@ -20,4 +20,9 @@
     <string name="pref_camera_auto_hdr_default" translatable="false">enable</string>
     <string name="pref_camera_scenedetect_default" translatable="false">on</string>
     <string name="pref_camera_dis_default" translatable="false">enable</string>
+    <string name="pref_camera_selfiemirror_default" translatable="false">enable</string>
+    <string name="pref_camera_manual_exp_default" translatable="false">on</string>
+    <string name="pref_camera_manual_wb_default" translatable="false">on</string>
+    <string name="pref_camera_manual_focus_default" translatable="false">on</string>
+    <string name="pref_camera_noise_reduction_default" translatable="false">on</string>
 </resources>
