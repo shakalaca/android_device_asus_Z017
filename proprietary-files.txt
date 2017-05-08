@@ -1146,7 +1146,7 @@ bin/mmi_debug
 bin/modem_country
 bin/nl_listener
 bin/pktlogconf
-bin/port-bridge
+#bin/port-bridge
 bin/proximity_calibration_start
 bin/proximity_poll_get_proxm
 bin/ptt_socket_app
