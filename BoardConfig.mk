@@ -49,6 +49,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 ENABLE_CPUSETS := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
+TARGET_CPU_CORTEX_A53 := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 
