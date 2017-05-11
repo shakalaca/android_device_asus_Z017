@@ -1210,3 +1210,8 @@ xbin/netlog.sh
 #bin/fsstress
 #bin/fsstress-run.sh
 #bin/create_pcbid.sh
+
+bin/writeosinfo
+
+etc/public.libraries.txt
+vendor/etc/public.libraries.txt
