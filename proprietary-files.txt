@@ -1053,14 +1053,12 @@ lib64/libgifimage.so
 lib64/libimagepipeline.so
 lib64/libwebp.so
 lib64/libwebpimage.so
-lib64/libantradio.so
 lib64/libbitmaps.so
 lib64/libcrashlytics-envelope.so
 lib64/libcrashlytics.so
 lib64/libmemchunk.so
 lib64/libjni.so
 lib64/libmms_gyro_vstab.so
-lib/libantradio.so
 lib/libcmdthread.so
 lib/libdevicedata.so
 lib/libjni.so
