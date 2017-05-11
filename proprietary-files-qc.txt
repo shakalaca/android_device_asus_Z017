@@ -910,12 +910,16 @@ etc/firmware/wcnss.b11
 etc/firmware/wcnss.b12
 etc/firmware/wcnss.mdt
 
-#lib64/libsdmcore.so
-#lib64/libsdmutils.so
-#lib/libsdmcore.so
-#lib/libsdmutils.so
-#lib/hw/hwcomposer.msm8953.so
-#lib64/hw/hwcomposer.msm8953.so
+lib64/libsdmcore.so
+lib64/libsdmutils.so
+lib64/libqservice.so
+lib64/libqdutils.so
+lib/libsdmcore.so
+lib/libsdmutils.so
+lib/libqservice.so
+lib/libqdutils.so
+lib/hw/hwcomposer.msm8953.so
+lib64/hw/hwcomposer.msm8953.so
 
 #-vendor/app/CABLService/CABLService.apk
 #-vendor/app/RIDLClient/RIDLClient.apk
