@@ -77,3 +77,5 @@ allow camera_app jpeg_device:chr_file { read write open ioctl };
 allow camera_app dit_file:dir { search };
 allow camera_app dit_file:sock_file { write };
 allow camera_app mm-qcamerad:unix_stream_socket { connectto };
+
+allow mediadrmserver firmware_file:dir { search };
