@@ -1135,7 +1135,7 @@ bin/diag_socket_log
 bin/diag_uart_log
 bin/dun-server
 bin/e_loop
-bin/fstman
+#bin/fstman
 bin/fw_auto_update.sh
 bin/garden_app
 bin/gpsone_daemon
