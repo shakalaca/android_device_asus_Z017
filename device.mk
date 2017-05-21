@@ -613,9 +613,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.display.splendid.xml:system/etc/permissions/asus.hardware.display.splendid.xml
 
 PRODUCT_PACKAGES += \
-    AsusSplendidCommandAgent \
-    AsusSplendid \
-    LUT_Rd03
+    AsusSplendidCommandAgent
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 

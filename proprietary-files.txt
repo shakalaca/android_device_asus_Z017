@@ -1045,7 +1045,7 @@ etc/sensors/sensor_def_qcomdev.conf
 bin/GammaSetting
 bin/HSVSetting
 -app/AsusSplendidCommandAgent/AsusSplendidCommandAgent.apk
--priv-app/AsusSplendid/AsusSplendid.apk
+#-priv-app/AsusSplendid/AsusSplendid.apk
 
 # misc
 lib64/libfilterpack_facedetect.so
