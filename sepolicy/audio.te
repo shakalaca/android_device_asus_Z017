@@ -26,6 +26,6 @@ allow audio_debug i2c_device:chr_file { read write ioctl open };
 allow audio_debug tfa_i2c_device:chr_file { read write ioctl open };
 allow audio_debug Tfa98xx_cnt_file:file { getattr };
 
-allow audioserver factory_file:dir { search open };
+allow audioserver factory_file:dir { search open read };
 allow audioserver factory_file:file { getattr read open };
 allow audioserver tfa_i2c_device:chr_file { ioctl read write open };
