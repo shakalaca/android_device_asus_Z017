@@ -3,6 +3,4 @@
   <project name="shakalaca/android_device_asus_Z017" path="device/asus/Z017" remote="github" revision="cm-14.1" />
   <project name="shakalaca/android_kernel_asus_ze520kl" path="kernel/asus/Z017" remote="github" revision="android-7.0" />
   <project name="shakalaca/android_hardware_qcom_audio-caf_msm8937_asus" path="hardware/qcom/audio-caf/msm8937/legacy" remote="github" revision="master" />
-  <remove-project name="LineageOS/android_hardware_qcom_fm" />
-  <project name="LineageOS/android_hardware_qcom_fm" path="vendor/qcom/opensource/fm" remote="github" />
 </manifest>
