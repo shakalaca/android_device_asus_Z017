@@ -30,18 +30,19 @@
 import init.asus.usb.rc
 #import init.msm.usb.configfs.rc
 #ASUS_BSP--- "[USB][NA][Spec] Add ASUS USB support"
+import init.target.rc
 #ASUS_BSP +++ ShowCai "[Thermal] Thermal Service"
 import init.asus.thermald.rc
 #ASUS_BSP --- ShowCai "[Thermal] Thermal Service"
 #+++ ASUS_BSP : Add ASUS user/eng rc
 import init.asus.rc
 # --- ASUS_BSP : Add ASUS user/eng rc
+import init.qcom.factory.rc
+import init.qcom.test.rc
+
 #ASUS_BSP Wei +++
 import init.asus.debugtool.rc
 #ASUS_BSP Wei +++
-import init.target.rc
-import init.qcom.factory.rc
-
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
@@ -977,6 +978,15 @@ service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     oneshot
     disabled
 
+service hostapd_cmd /system/bin/hostapd_cmd
+    class main
+    group system wifi
+    user root
+    oneshot
+    disabled
+
+on property:persist.sys.wifi.hostapd.cmd=*
+    start hostapd_cmd
 
 service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
     class late_start

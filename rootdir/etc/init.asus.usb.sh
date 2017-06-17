@@ -8,6 +8,7 @@ if [ -f $cdromname ]; then
     echo $cdromname > /sys/class/android_usb/android0/f_mass_storage/lun/file
     chmod 0444 /sys/class/android_usb/android0/f_mass_storage/lun/file
     echo 1 > /sys/class/android_usb/android0/pready
+    echo 0 > /sys/class/android_usb/android0/boot_lock
     case "$per_sysusbconfig" in
 	"mtp,mass_storage" | "mtp")
 		setprop persist.sys.usb.config mtp,mass_storage
@@ -21,6 +22,7 @@ else
     echo "unmounting usbcdrom lun" > /dev/kmsg
     echo "" > /sys/class/android_usb/android0/f_mass_storage/lun/file
     echo 1 > /sys/class/android_usb/android0/pready
+    echo 0 > /sys/class/android_usb/android0/boot_lock
     case "$per_sysusbconfig" in
 	"mtp,mass_storage" | "mtp")
 		setprop persist.sys.usb.config mtp
