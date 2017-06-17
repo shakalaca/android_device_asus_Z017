@@ -1005,7 +1005,7 @@ etc/firmware/gxfpa.b05
 etc/firmware/gxfpa.b06
 etc/firmware/gxfpa.mdt
 etc/fpsensortest.sh
-etc/fpservice.sh
+#etc/fpservice.sh
 
 # Radio - factory
 #lib64/libparam.so
@@ -1103,9 +1103,6 @@ etc/select_output.sh
 etc/sensors_factory_init.sh
 etc/spkampcal.sh
 etc/tamcid
-etc/wfdconfig.xml
-etc/wfdconfig_le.xml
-etc/wfdconfigsink.xml
 
 framework/ifaamanager.jar
 framework/tcmiface.jar
@@ -1220,7 +1217,8 @@ xbin/netlog.sh
 #bin/create_pcbid.sh
 
 bin/writeosinfo
+bin/hostapd_cmd
 
-etc/public.libraries.txt
+#etc/public.libraries.txt
 vendor/etc/public.libraries.txt
 
