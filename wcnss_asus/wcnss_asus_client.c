@@ -21,7 +21,7 @@
 #define SUCCESS 0
 #define FAILED -1
 
-#define MAC_ADDR_PATH "/factory/wifimac.txt"
+#define MAC_ADDR_PATH "/factory/wifi.nv"
 #define GENMAC_FILE "/persist/.genmac"
 #define MAC_ADDR_SIZE 12
 #define MAX_WAIT_COUNT 10
@@ -49,7 +49,7 @@ int wcnss_qmi_get_wlan_address(unsigned char *pBdAddr)
 {
     int fd, ret;
     int i = 0, success = 0;
-    char buf[12];
+    char buf[24];
     struct stat mac_stat;
 
     while (stat(MAC_ADDR_PATH, &mac_stat) && i < MAX_WAIT_COUNT) {
@@ -64,11 +64,11 @@ int wcnss_qmi_get_wlan_address(unsigned char *pBdAddr)
         if (fd < 0) {
             ALOGE("Failure opening MAC path: %d\n", errno);
         } else {
-            ret = read(fd, buf, 12);
+            ret = read(fd, buf, 24);
             if (ret < 0) {
                 ALOGE("Failure to read MAC data: %d\n", errno);
             } else {
-                sscanf(buf, "%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx",
+                sscanf(buf, "MacAddress0=%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx",
                     &pBdAddr[0], &pBdAddr[1], &pBdAddr[2],
                     &pBdAddr[3], &pBdAddr[4], &pBdAddr[5]);
 
