@@ -334,3 +334,4 @@ persist.radio.flexmap_type=asus_mode
 qcom.bluetooth.soc=smd
 ro.qualcomm.bt.hci_transport=smd
 ro.sys.sdcardfs=true
+media.camera.ts.monotonic=0
