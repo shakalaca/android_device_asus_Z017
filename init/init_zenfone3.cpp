@@ -27,30 +27,44 @@
 
 #include <stdlib.h>
 
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
+
+void property_override(char const prop[], char const value[])
+{
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
 
 void vendor_load_properties()
 {
     std::string project = property_get("ro.boot.id.prj");
     property_set("ro.product.name", "WW_Phone");
     if (project == "6") {
-        property_set("ro.build.product", "ZE520KL");
-        property_set("ro.build.description", "WW_Phone-user 7.0 NRD90M 14.2020.1703.28-20170410 release-keys");
-        property_set("ro.build.fingerprint", "asus/WW_Phone/ASUS_Z017D_1:7.0/NRD90M/14.2020.1703.28-20170410:user/release-keys");
-        property_set("ro.product.device", "ASUS_Z017D_1");
-        property_set("ro.product.model", "ASUS_Z017D");
+        property_override("ro.build.product", "ZE520KL");
+        property_override("ro.build.description", "WW_Phone-user 7.0 NRD90M 14.2020.1703.28-20170410 release-keys");
+        property_override("ro.build.fingerprint", "asus/WW_Phone/ASUS_Z017D_1:7.0/NRD90M/14.2020.1703.28-20170410:user/release-keys");
+        property_override("ro.product.device", "ASUS_Z017D_1");
+        property_override("ro.product.model", "ASUS_Z017D");
         property_set("ro.product.carrier", "US-ASUS_Z017D-WW_Phone");
         property_set("ro.hardware.id", "ZE520KL_MP");
         property_set("ro.build.csc.version", "WW_ZE520KL-14.2020.1703.28-20170410");
     } else if (project == "7") {
-        property_set("ro.build.product", "ZE552KL");
-        property_set("ro.build.description", "WW_Phone-user 7.0 NRD90M 14.2020.1703.28-20170410 release-keys");
-        property_set("ro.build.fingerprint", "asus/WW_Phone/ASUS_Z012D:7.0/NRD90M/14.2020.1703.28-20170410:user/release-keys");
-        property_set("ro.product.device", "ASUS_Z012D");
-        property_set("ro.product.model", "ASUS_Z012D");
+        property_override("ro.build.product", "ZE552KL");
+        property_override("ro.build.description", "WW_Phone-user 7.0 NRD90M 14.2020.1703.28-20170410 release-keys");
+        property_override("ro.build.fingerprint", "asus/WW_Phone/ASUS_Z012D:7.0/NRD90M/14.2020.1703.28-20170410:user/release-keys");
+        property_override("ro.product.device", "ASUS_Z012D");
+        property_override("ro.product.model", "ASUS_Z012D");
         property_set("ro.product.carrier", "US-ASUS_Z012D-WW_Phone");
         property_set("ro.hardware.id", "ZE552KL_MP");
         property_set("ro.build.csc.version", "WW_ZE552KL-14.2020.1703.28-20170410");
