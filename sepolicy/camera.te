@@ -79,3 +79,6 @@ allow camera_app dit_file:sock_file { write };
 allow camera_app mm-qcamerad:unix_stream_socket { connectto };
 
 allow mediadrmserver firmware_file:dir { search };
+
+allow camera_app media_rw_data_file:file { open create write unlink };
+allow camera_app media_rw_data_file:dir { search getattr read open write add_name remove_name };
