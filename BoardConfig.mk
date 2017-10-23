@@ -29,7 +29,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := ze520kl-userdebug_defconfig
-TARGET_PREBUILT_KERNEL := device/asus/ze520kl/kernel
+TARGET_PREBUILT_KERNEL := device/asus/Z017/kernel
 
 TARGET_LDPRELOAD := libNimsWrap.so
 
@@ -80,4 +80,4 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := \
     $(OUT)/system/bin/qseecomd
 
 TARGET_UNIFIED_DEVICE := true
-TARGET_SYSTEM_PROP := device/asus/ze520kl/system.prop
+TARGET_SYSTEM_PROP := device/asus/Z017/system.prop
