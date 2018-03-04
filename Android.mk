@@ -20,4 +20,18 @@ LOCAL_PATH := $(call my-dir)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
+
+BOARD_RECOVERY_IMAGE_PREPARE := \
+  sed -i 's/ro.build.id=.*/ro.build.id=OPR1.170623.026/g' $(TARGET_RECOVERY_ROOT_OUT)/default.prop; \
+  sed -i 's/ro.product.name=.*/ro.product.name=OPEN_Phone/g' $(TARGET_RECOVERY_ROOT_OUT)/default.prop
+
+TEXFAT_MODULE := $(TARGET_RECOVERY_ROOT_OUT)/sbin/texfat.ko
+$(TEXFAT_MODULE): $(ANDROID_PRODUCT_OUT)/kernel
+	@cp $(KERNEL_MODULES_OUT)/texfat.ko $(TEXFAT_MODULE)
+	kernel/asus/Z017/scripts/sign-file sha512 \
+		$(ANDROID_PRODUCT_OUT)/obj/KERNEL_OBJ/signing_key.priv \
+		$(ANDROID_PRODUCT_OUT)/obj/KERNEL_OBJ/signing_key.x509 \
+		$(TEXFAT_MODULE)
+
+ALL_DEFAULT_INSTALLED_MODULES += $(TEXFAT_MODULE)
 endif

@@ -8,7 +8,7 @@
   {
     "remote": "github",
     "repository": "TeamWin/android_device_qcom_common",
-    "revision": "android-7.1",
+    "revision": "android-8.0",
     "target_path": "device/qcom/common"
   }
 ]
