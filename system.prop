@@ -2,3 +2,4 @@ ro.build.model=ASUS_Z017DA
 ro.build.device=Z017
 ro.product.device=ASUS_Z017D_1
 ro.product.model=ASUS_Z017DA
+ro.product.name=OPEN_Phone
